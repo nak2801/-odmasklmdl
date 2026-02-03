@@ -1,0 +1,140 @@
+# vsim -c -do "run -all; quit" -work work tb_qspi_winbond 
+# Start time: 14:50:36 on Feb 02,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "qspi_flash_programmer_simple(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "qspi_xip_prog_ctrl_ahbl(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "spi_master(fast)".
+# //  Questa Sim-64
+# //  Version 2021.2_1 linux_x86_64 May 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.tb_qspi_winbond(fast)
+# Loading work.qspi_xip_prog_ctrl(fast)
+# Loading work.qspi_xip_prog_ctrl_ahbl(fast)
+# Loading work.qspi_dmc(fast)
+# Loading work.qspi_xip_reader(fast)
+# Loading work.qspi_flash_programmer_simple(fast)
+# Loading work.spi_master(fast)
+# Loading work.qspi_prog_ahb(fast)
+# Loading work.W25Q128JVxIM(fast)
+# run -all
+# 
+# ========================================
+#   QSPI Controller Test with Winbond
+#   W25Q128JVxIM Official Flash Model
+# ========================================
+# 
+# [TEST 1] Read JEDEC ID via AHB
+# 
+# Command = 9f
+# [TB] Operation complete, STATUS=0x00000002
+#   JEDEC ID = 0xef7018
+#   [PASS] JEDEC ID correct (Winbond W25Q128JV)
+# 
+# [TEST 2] Read Status Register via AHB
+# 
+# Command = 05
+# [TB] Operation complete, STATUS=0x00000002
+#   Flash Status = 0x00
+#   [INFO] WIP=0, WEL=0
+# 
+# [TEST 3] Sector Erase at 0x001000 via AHB
+# 
+# Command = 06
+# 
+# Command = 20
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# [TB] Operation complete, STATUS=0x00000002
+#   [INFO] Erase command sent
+# 
+# [TEST 4] Page Program at 0x001000 via AHB
+# 
+# Command = 06
+# 
+# Command = 02
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# 
+# Command = 05
+# [TB] Operation complete, STATUS=0x00000002
+#   [INFO] Programming command sent
+# 
+# [TEST 5] XIP Read at 0x001000 via AHB
+# 
+# Command = eb
+#   XIP Read [0x001000] = 0xa3a2a1a0
+#   XIP Read [0x001004] = 0xa7a6a5a4
+#   XIP Read [0x001008] = 0xabaaa9a8
+#   XIP Read [0x00100c] = 0xafaeadac
+# 
+# [TEST 6] XIP Read at 0x000000 via AHB
+# 
+# Command = eb
+#   XIP Read [0x000000] = 0xffffffff
+#   XIP Read [0x000004] = 0xffffffff
+#   XIP Read [0x000008] = 0xffffffff
+#   XIP Read [0x00000c] = 0xffffffff
+# 
+# ========================================
+#   All tests completed!
+# ========================================
+# 
+# ** Note: $finish    : tb/tb_qspi_winbond.v(360)
+#    Time: 100450 ns  Iteration: 0  Instance: /tb_qspi_winbond
+# End time: 14:51:25 on Feb 02,2026, Elapsed time: 0:00:49
+# Errors: 0, Warnings: 0
